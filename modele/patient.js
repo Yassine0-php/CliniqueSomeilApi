@@ -2,14 +2,14 @@
 const bdd = require("../config/connexionBdd");
 
 function findPatientById(id, callback) {
-    bdd.get(
-        `SELECT * FROM patient WHERE id = ?`,
+    bdd.query(
+        `SELECT * FROM patient WHERE id_patient = ?`,
         [id],
-        (err, row) => {
+        (err, result) => {
             if (err) {
                 return callback(err, null);
             }
-            return callback(null, row);
+            return callback(null,  result[0]);
         }
     );
 }
