@@ -8,18 +8,22 @@ router.get('/', (req,res) => {
     const id  = Number(req.query.id);
     //console.log("id reçu : ", id)
     patientModele.findPatientById(id, (err, patient) => {
-        console.log(patient)
-        if (err) {
-            return res.status(500).json({ success: false });
-         }
+         console.log("Erreur SQL :", err);
+    console.log("Patient :", patient);
 
+    if (err) {
+        return res.status(500).json({ 
+            success: false,
+            error: err.message
+        });
+    }
         if (patient) {
              return res.status(200).json({
                 "patient": {
-                    "id": patient.id,
+                    "id_patient": patient.id_patient,
                     "nom": patient.nom,
                     "prenom": patient.prenom,
-                    "mail": patient.mail,
+                    
                     
                 }
              });
