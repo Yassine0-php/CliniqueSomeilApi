@@ -45,13 +45,15 @@ function supprimerPatientId(id_patient, callback) {
     );
 }
 
-function modifierPatient(id, nom, prenom, age, mail, telephone, callback) {
+function modifierPatient(id_patient, nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif, callback) {
 
     bdd.query(
         `UPDATE patient 
-         SET nom = ?, prenom = ?, age = ?, mail = ?, telephone = ?
-         WHERE id = ?`,
-        [nom, prenom, age, mail, telephone, id],
+         SET nom = ?, prenom = ?, date_naissance = ?, sexe = ?, adresse = ?, telephone = ?, 
+         email = ?, numero_secu = ?, imc_initial = ?, fumeur = ?, pa_tabac = ?, consommation_alcool = ?, 
+         profession = ?, niveau_activite = ?,date_creation_dpi = ?, actif = ?
+         WHERE id_patient = ?`,
+        [id_patient, nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,],
         function (err) {
 
             if (err) {
