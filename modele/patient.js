@@ -1,10 +1,10 @@
 
 const bdd = require("../config/connexionBdd");
 
-function findPatientById(id, callback) {
+function findPatientById(id_patient, callback) {
     bdd.query(
         `SELECT * FROM patient WHERE id_patient = ?`,
-        [id],
+        [id_patient],
         (err, result) => {
             if (err) {
                 return callback(err, null);
@@ -30,10 +30,10 @@ function ajouterNouveauPatient(nom, prenom, date_naissance, sexe,adresse,telepho
 }
 
 
-function supprimerPatientId(id, callback) {
+function supprimerPatientId(id_patient, callback) {
     bdd.query(
-        `DELETE FROM patient WHERE id = ?`,
-        [id],
+        `DELETE FROM patient WHERE id_patient = ?`,
+        [id_patient],
         function (err) {
 
             if (err) {
