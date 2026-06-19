@@ -9,7 +9,7 @@ const bdd = mysql.createConnection({
 });
 
 
-bddCliniquePlus.connect((err) => {
+bdd.connect((err) => {
     if (err) {
         console.log("Erreur connexion MySQL :", err);
         return;
@@ -19,4 +19,4 @@ bddCliniquePlus.connect((err) => {
 });
 
 
-module.exports = bddCliniquePlus;
+module.exports = bdd;
