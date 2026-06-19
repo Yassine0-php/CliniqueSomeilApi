@@ -1,7 +1,7 @@
-# CliniqueSomeilApi
+# CliniqueSommeilApi
 
 # 1. Le projet
-Api CliniqueSomeil avec node express.js pour liaison avec le projet de géneration de courbe rapport.
+Api CliniqueSommeil avec node express.js pour liaison avec le projet de géneration de courbe rapport.
 
 # 2. Comment installer et lancer le projet
 Effectuer ces commandes dans un terminal à la racine du projet
