@@ -2,7 +2,7 @@
 const bdd = require("../config/connexionBdd");
 
 function findPatientById(id, callback) {
-    bddCliniquePlus.get(
+    bdd.get(
         `SELECT * FROM patient WHERE id = ?`,
         [id],
         (err, row) => {
@@ -15,7 +15,7 @@ function findPatientById(id, callback) {
 }
 
 function ajouterNouveauPatient(nom, prenom, age, mail, telephone, callback) {
-    bddCliniquePlus.run(
+    bdd.run(
         `INSERT INTO patient (nom, prenom, age, mail, telephone) VALUES (?, ?, ?, ?, ?)`,
         [nom, prenom, age, mail, telephone],
         function (err) {
@@ -31,7 +31,7 @@ function ajouterNouveauPatient(nom, prenom, age, mail, telephone, callback) {
 
 
 function supprimerPatientId(id, callback) {
-    bddCliniquePlus.run(
+    bdd.run(
         `DELETE FROM patient WHERE id = ?`,
         [id],
         function (err) {
@@ -47,7 +47,7 @@ function supprimerPatientId(id, callback) {
 
 function modifierPatient(id, nom, prenom, age, mail, telephone, callback) {
 
-    bddCliniquePlus.run(
+    bdd.run(
         `UPDATE patient 
          SET nom = ?, prenom = ?, age = ?, mail = ?, telephone = ?
          WHERE id = ?`,
