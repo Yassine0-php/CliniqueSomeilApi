@@ -36,6 +36,10 @@ router.get('/', (req,res) => {
 
 
 
+
+
+
+
 router.post("/", (req, res) => {
     const { nom, prenom, age, mail, telephone } = req.body;
 
@@ -109,3 +113,10 @@ router.put("/", (req, res) => {
 
 
 module.exports = router;
+
+
+
+
+
+
+

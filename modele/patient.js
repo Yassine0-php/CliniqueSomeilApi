@@ -1,7 +1,5 @@
 
-const sqlite3 = require('sqlite3').verbose();
-
-let bddCliniquePlus = new sqlite3.Database('./CliniquePlus.db', sqlite3.OPEN_READWRITE);
+const bdd = require("../config/connexionBdd");
 
 function findPatientById(id, callback) {
     bddCliniquePlus.get(
