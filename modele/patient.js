@@ -14,10 +14,10 @@ function findPatientById(id, callback) {
     );
 }
 
-function ajouterNouveauPatient(nom, prenom, age, mail, telephone, callback) {
-    bdd.run(
-        `INSERT INTO patient (nom, prenom, age, mail, telephone) VALUES (?, ?, ?, ?, ?)`,
-        [nom, prenom, age, mail, telephone],
+function ajouterNouveauPatient(nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,callback) {
+    bdd.query(
+        `INSERT INTO patient (nom, prenom, date_naissance,sexe,adresse,telephone,email,numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)`,
+        [nom, prenom, date_naissance,sexe,adresse,telephone,email,numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif],
         function (err) {
 
             if (err) {
@@ -31,7 +31,7 @@ function ajouterNouveauPatient(nom, prenom, age, mail, telephone, callback) {
 
 
 function supprimerPatientId(id, callback) {
-    bdd.run(
+    bdd.query(
         `DELETE FROM patient WHERE id = ?`,
         [id],
         function (err) {
@@ -47,7 +47,7 @@ function supprimerPatientId(id, callback) {
 
 function modifierPatient(id, nom, prenom, age, mail, telephone, callback) {
 
-    bdd.run(
+    bdd.query(
         `UPDATE patient 
          SET nom = ?, prenom = ?, age = ?, mail = ?, telephone = ?
          WHERE id = ?`,
