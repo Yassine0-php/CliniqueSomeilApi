@@ -23,6 +23,24 @@ router.get('/', (req,res) => {
                     "id_patient": patient.id_patient,
                     "nom": patient.nom,
                     "prenom": patient.prenom,
+
+
+                    "date_naissance":patient.date_naissance,
+                    "sexe":patient.sexe,
+                    "adresse":patient.adresse,
+                    "telephone":patient.telephone,
+                    "email":patient.email,
+                    "numero_secu":patient.numero_secu,
+                    "imc_initial":patient.imc_initial,
+                    "fumeur":patient.fumeur,
+                    "pa_tabac":patient.pa_tabac,
+                    "consommation_alcool":patient.consommation_alcool,
+                    "profession":patient.profession,
+                    "niveau_activité":patient.niveau_activite,
+                    "date_creation_dpi":patient.date_creation_dpi,
+                    "actif":patient.actif
+
+
                     
                     
                 }
@@ -45,16 +63,19 @@ router.get('/', (req,res) => {
 
 
 router.post("/", (req, res) => {
-    const { nom, prenom, age, mail, telephone } = req.body;
 
-    
+   
+
+    const { nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,
+            pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif } = req.body;
+
 
    patientModele.ajouterNouveauPatient(
-    nom,
-    prenom,
-    age,
-    mail,
-    telephone,
+    nom,prenom,date_naissance,sexe,adresse,telephone,email,numero_secu,imc_initial,fumeur,
+    pa_tabac,consommation_alcool,profession, niveau_activite,date_creation_dpi,actif,
+    //attribut table patient
+
+    
     (err, id) => {
         if (err) {
             return res.status(500).json({ message:"patient deja existant !!" });
@@ -87,16 +108,14 @@ router.delete("/", (req, res) => {
 
 router.put("/", (req, res) => {
      const id  = Number(req.query.id);
-    const { nom, prenom, age, mail, telephone } = req.body;
+     const { nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,
+            pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif } = req.body;
     
-
+    //ajouter les infos de la table patient
    patientModele.modifierPatient(
-    id,
-    nom,
-    prenom,
-    age,
-    mail,
-    telephone,
+    id,nom,prenom,date_naissance,sexe,adresse,telephone, email, numero_secu,imc_initial,
+    fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,
+    
     (err, changes) => {
         if (err) {
             return res.status(500).json({ error: err.message });

@@ -8,6 +8,8 @@ const userRoute = require('./routes/utilisateurs.js');
 const patientRoute = require('./routes/patient.js');
 const resultatNuitRoute = require('./routes/resultatNuitRoutes.js');
 const appareilRoute = require('./routes/appareilRoutes.js');
+const rhRoute = require('./routes/rh.js');
+
 
 
 app.use('/login', userRoute);
@@ -15,9 +17,18 @@ app.use('/patientId', patientRoute);
 app.use('/patients', patientRoute);
 app.use('/patientsupprimer', patientRoute);
 app.use('/patientModifier', patientRoute);
+
 app.use('/resultat-nuit-ajout', resultatNuitRoute);
 
 app.use(appareilRoute);
+app.use('/trouverPersonnelParId', rhRoute);
+app.use('/ajouterNouveauPersonnel', rhRoute);
+app.use('/supprimerPersonnelId', rhRoute);
+app.use('/modifierPersonnelId', rhRoute);
+
+app.use('/resultat-nuit', resultatNuitRoute);
+
+
 
 
 const port = 3000;

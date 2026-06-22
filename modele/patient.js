@@ -1,10 +1,10 @@
 
 const bdd = require("../config/connexionBdd");
 
-function findPatientById(id, callback) {
+function findPatientById(id_patient, callback) {
     bdd.query(
         `SELECT * FROM patient WHERE id_patient = ?`,
-        [id],
+        [id_patient],
         (err, result) => {
             if (err) {
                 return callback(err, null);
@@ -14,10 +14,10 @@ function findPatientById(id, callback) {
     );
 }
 
-function ajouterNouveauPatient(nom, prenom, age, mail, telephone, callback) {
-    bdd.run(
-        `INSERT INTO patient (nom, prenom, age, mail, telephone) VALUES (?, ?, ?, ?, ?)`,
-        [nom, prenom, age, mail, telephone],
+function ajouterNouveauPatient(nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,callback) {
+    bdd.query(
+        `INSERT INTO patient (nom, prenom, date_naissance,sexe,adresse,telephone,email,numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)`,
+        [nom, prenom, date_naissance,sexe,adresse,telephone,email,numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif],
         function (err) {
 
             if (err) {
@@ -30,10 +30,10 @@ function ajouterNouveauPatient(nom, prenom, age, mail, telephone, callback) {
 }
 
 
-function supprimerPatientId(id, callback) {
-    bdd.run(
-        `DELETE FROM patient WHERE id = ?`,
-        [id],
+function supprimerPatientId(id_patient, callback) {
+    bdd.query(
+        `DELETE FROM patient WHERE id_patient = ?`,
+        [id_patient],
         function (err) {
 
             if (err) {
@@ -45,13 +45,15 @@ function supprimerPatientId(id, callback) {
     );
 }
 
-function modifierPatient(id, nom, prenom, age, mail, telephone, callback) {
+function modifierPatient(id_patient, nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif, callback) {
 
-    bdd.run(
+    bdd.query(
         `UPDATE patient 
-         SET nom = ?, prenom = ?, age = ?, mail = ?, telephone = ?
-         WHERE id = ?`,
-        [nom, prenom, age, mail, telephone, id],
+         SET nom = ?, prenom = ?, date_naissance = ?, sexe = ?, adresse = ?, telephone = ?, 
+         email = ?, numero_secu = ?, imc_initial = ?, fumeur = ?, pa_tabac = ?, consommation_alcool = ?, 
+         profession = ?, niveau_activite = ?,date_creation_dpi = ?, actif = ?
+         WHERE id_patient = ?`,
+        [ nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,id_patient],
         function (err) {
 
             if (err) {
