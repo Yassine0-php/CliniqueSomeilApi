@@ -16,11 +16,16 @@ app.use('/patientId', patientRoute);
 app.use('/patients', patientRoute);
 app.use('/patientsupprimer', patientRoute);
 app.use('/patientModifier', patientRoute);
+
 app.use('/resultat-nuit-ajout', resultatNuitRoute);
 app.use('/trouverPersonnelParId', rhRoute);
 app.use('/ajouterNouveauPersonnel', rhRoute);
 app.use('/supprimerPersonnelId', rhRoute);
 app.use('/modifierPersonnelId', rhRoute);
+
+app.use('/resultat-nuit', resultatNuitRoute);
+
+
 
 
 const port = 3000;
