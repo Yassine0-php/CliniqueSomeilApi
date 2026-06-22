@@ -1,17 +1,28 @@
-const sqlite3 = require('sqlite3').verbose();
-const userModele = require('../modele/utilisateur.js');
+const bdd = require("../config/connexionBdd");
 
-let bddCliniquePlus = new sqlite3.Database('./CliniquePlus.db', sqlite3.OPEN_READONLY);
+function findUserByMailAndPassword(email, mdp, callback) {
 
-function findUserByMailAndPassword(mail, password, callback) {
-    bddCliniquePlus.get(
-        `SELECT id, mail, password, role FROM users WHERE mail = ? AND password = ?`,
-        [mail, password],
-        (err, row) => {
+    console.log(email, mdp);
+
+    bdd.query(
+        `SELECT id_utilisateur, email, mdp, role 
+         FROM utilisateur 
+         WHERE email = ? AND mdp = ?`,
+        [email, mdp],
+        (err, rows) => {
+
             if (err) {
+                console.error(err);
                 return callback(err, null);
             }
-            return callback(null, row);
+
+            console.log("Résultat SQL :", rows);
+
+            if (rows.length > 0) {
+                return callback(null, rows[0]);
+            }
+
+            return callback(null, null);
         }
     );
 }

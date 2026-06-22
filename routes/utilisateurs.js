@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const userModele = require('../modele/utilisateur.js')
 
-router.post('/login', (req, res) => {
+router.post('/', (req, res) => {
 
-    const { mail, password } = req.body;
-
-    userModele.findUserByMailAndPassword(mail, password, (err, user) => {
+    const { email, mdp } = req.body;
+    console.log(req.body);
+    userModele.findUserByMailAndPassword(email, mdp, (err, user) => {
 
         if (err) {
             return res.status(500).json({ success: false });
@@ -15,7 +16,7 @@ router.post('/login', (req, res) => {
             return res.status(200).json({
                 success: true,
                 message: "Connexion validée",
-                id: user.id,
+                id_utilisateur: user.id_utilisateur,
                 role: user.role
             });
         }
