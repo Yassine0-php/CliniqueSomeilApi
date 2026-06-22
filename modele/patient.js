@@ -53,7 +53,7 @@ function modifierPatient(id_patient, nom, prenom, date_naissance, sexe,adresse,t
          email = ?, numero_secu = ?, imc_initial = ?, fumeur = ?, pa_tabac = ?, consommation_alcool = ?, 
          profession = ?, niveau_activite = ?,date_creation_dpi = ?, actif = ?
          WHERE id_patient = ?`,
-        [id_patient, nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,],
+        [ nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,id_patient],
         function (err) {
 
             if (err) {
