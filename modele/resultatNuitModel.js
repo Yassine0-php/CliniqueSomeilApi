@@ -3,7 +3,7 @@ const bdd = require("../config/connexionBdd");
 
 bdd.query('SELECT * FROM resultat_nuit', (err, results) => {
     if (err) throw err;
-    console.log(results);
+    //console.log(results);
 });
 
 function insertDataNight(
@@ -146,7 +146,7 @@ function insertDataNight(
         }
         ajout = result.insertId
         return ajout;
-        console.log("Ligne ajoutée avec ID :", result.insertId);
+        //console.log("Ligne ajoutée avec ID :", result.insertId);
     });
 }
 
