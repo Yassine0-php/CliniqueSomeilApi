@@ -3,7 +3,7 @@ const bdd = require("../config/connexionBdd");
 
 bdd.query('SELECT * FROM resultat_nuit', (err, results) => {
     if (err) throw err;
- origin/cedric
+ 
 });
 
 function insertDataNight(
