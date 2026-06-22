@@ -7,7 +7,7 @@ app.use(express.json());
 const userRoute = require('./routes/utilisateurs.js');
 const patientRoute = require('./routes/patient.js');
 const resultatNuitRoute = require('./routes/resultatNuitRoutes.js');
-
+const appareilRoute = require('./routes/appareilRoutes.js');
 
 
 app.use('/login', userRoute);
@@ -16,6 +16,8 @@ app.use('/patients', patientRoute);
 app.use('/patientsupprimer', patientRoute);
 app.use('/patientModifier', patientRoute);
 app.use('/resultat-nuit-ajout', resultatNuitRoute);
+
+app.use(appareilRoute);
 
 
 const port = 3000;
