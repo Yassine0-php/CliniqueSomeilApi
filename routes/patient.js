@@ -108,16 +108,14 @@ router.delete("/", (req, res) => {
 
 router.put("/", (req, res) => {
      const id  = Number(req.query.id);
-    const { nom, prenom, age, mail, telephone } = req.body;
+     const { nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,
+            pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif } = req.body;
     
     //ajouter les infos de la table patient
    patientModele.modifierPatient(
-    id,
-    nom,
-    prenom,
-    age,
-    mail,
-    telephone,
+    id,nom,prenom,date_naissance,sexe,adresse,telephone, email, numero_secu,imc_initial,
+    fumeur,pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif,
+    
     (err, changes) => {
         if (err) {
             return res.status(500).json({ error: err.message });
