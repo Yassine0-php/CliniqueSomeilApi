@@ -34,7 +34,7 @@ router.get('/', (req,res) => {
                     "pa_tabac":patient.pa_tabac,
                     "consommation_alcool":patient.consommation_alcool,
                     "profession":patient.profession,
-                    "niveau_activite":patient.niveau_activite,
+                    "niveau_activité":patient.niveau_activite,
                     "date_creation_dpi":patient.date_creation_dpi,
                     "actif":patient.actif
 
