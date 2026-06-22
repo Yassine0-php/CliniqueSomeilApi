@@ -23,6 +23,24 @@ router.get('/', (req,res) => {
                     "id_patient": patient.id_patient,
                     "nom": patient.nom,
                     "prenom": patient.prenom,
+
+
+                    "date_naissance":patient.date_naissance,
+                    "sexe":patient.sexe,
+                    "adresse":patient.adresse,
+                    "telephone":patient.telephone,
+                    "email":patient.email,
+                    "numero_secu":patient.numero_secu,
+                    "imc_initial":patient.imc_initial,
+                    "fumeur":patient.fumeur,
+                    "pa_tabac":patient.pa_tabac,
+                    "consommation_alcool":patient.consommation_alcool,
+                    "profession":patient.profession,
+                    "niveau_activité":patient.niveau_activite,
+                    "date_creation_dpi":patient.date_creation_dpi,
+                    "actif":patient.actif
+
+
                     
                     
                 }
