@@ -1,6 +1,6 @@
 # CliniqueSommeilApi
 
-<<<<<<< HEAD
+
 # 1. Le projet
 Api CliniqueSommeil avec node express.js pour liaison avec le projet de géneration de courbe rapport.
 
@@ -44,9 +44,9 @@ DELETE : Supprimer des données via DELETE
 PUT : Modifier des donées via UPDATE
 
 ```
-=======
 
 
+```
 # 3. Routes disponibles et comment les tester
 
 | Méthode | Route | Description | Body JSON |
@@ -55,4 +55,4 @@ PUT : Modifier des donées via UPDATE
 | POST | `/ajouterNouveauPersonnel` | Création d'un personnel | `{"nom": "Dupont", "prenom" : "Amandine2", "date_embauche" : "2024-01-01", "telephone": "066644666", "email":"test2@test2.fr", "actif" : 1}` |
 | DELETE | `/supprimerPersonnelId` | Supprimer un personnel par ID | `{"id": 15}` |
 | PUT | `/modifierPersonnelId` | Modifier un personnel à partir de son ID |  `{"id": 15,"nom": "Dupont", "prenom" : "Amandine", "date_embauche" : "2024-01-01", "telephone": "0666666666", "email":"test@test.fr", "actif" : 0}` |
->>>>>>> origin/cedric
+```
