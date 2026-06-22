@@ -67,3 +67,12 @@ PUT : Modifier des donées via UPDATE
 | POST | `/patients` | Ajout d'un patient | `"nom": "bernard","prenom": "franc","date_naissance": "1980-03-27", "sexe": "M","adresse": "14 allée des Platanes, Fleur","telephone": "0622556698","email": "bernard.franc@sfr.fr","numero_secu": "2 80 03 13 143 225","imc_initial": "27.4",fumeur": 0,"pa_tabac": 0, "consommation_alcool": "aucune","profession": "Comptable","niveau_activité": "modéré","date_creation_dpi": "2024-10-05","actif": 1` |
 | DELETE | `/patientsupprimer` | Supprimer un patient par ID | `{"id": 2}` |
 | PUT | `/patientModifier` | Modifier un patient à partir de son ID |  `"nom": "bernard","prenom": "franc","date_naissance": "1980-03-27", "sexe": "M","adresse": "14 allée des Platanes, Fleur","telephone": "0622556698","email": "bernard.franc@sfr.fr","numero_secu": "2 80 03 13 143 225","imc_initial": "27.4",fumeur": 0,"pa_tabac": 0, "consommation_alcool": "aucune","profession": "Comptable","niveau_activité": "modéré","date_creation_dpi": "2024-10-05","actif": 1` |
+
+## 3. Route Appareil
+
+| Méthode | Route | Description | Body JSON |
+|---|---|---|---|
+| GET | `/appareilId` | Récupère un appareil par son ID |`{"id": 15}` |
+| POST | `/appareil-ajout` | Création d'un nouvel appareil | `{"modele": "AirSense 11", "numero_serie":"SN-CPAP-040", "fabricant": "ResMed", "date_installation": "2025-06-25", "localisation": "Domicile patient"}` |
+| DELETE | `/appareil-suppression` | Supprimer un appareil par ID | `{"id": 16}` |
+| PUT | `/appareil-localisation-modification` | Modifier la localisation d'un appareil à partir de son ID |  `{"id": 15,"localisation":"Domicile parent"}` |
