@@ -3,7 +3,11 @@ const bdd = require("../config/connexionBdd");
 
 bdd.query('SELECT * FROM resultat_nuit', (err, results) => {
     if (err) throw err;
+<<<<<<< HEAD
     // console.log(results);
+=======
+    //console.log(results);
+>>>>>>> origin/cedric
 });
 
 function insertDataNight(
@@ -146,7 +150,7 @@ function insertDataNight(
         }
         ajout = result.insertId
         return ajout;
-        // console.log("Ligne ajoutée avec ID :", result.insertId);
+
     });
 }
 
