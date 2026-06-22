@@ -49,10 +49,21 @@ PUT : Modifier des donées via UPDATE
 ```
 # 3. Routes disponibles et comment les tester
 
+## 1. Route Personnel
+
 | Méthode | Route | Description | Body JSON |
 |---|---|---|---|
 | GET | `/trouverPersonnelParId` | Récupère un personnel par son ID |`{"id": 15}` |
 | POST | `/ajouterNouveauPersonnel` | Création d'un personnel | `{"nom": "Dupont", "prenom" : "Amandine2", "date_embauche" : "2024-01-01", "telephone": "066644666", "email":"test2@test2.fr", "actif" : 1}` |
-| DELETE | `/supprimerPersonnelId` | Supprimer un personnel par ID | `{"id": 15}` |
+| DELETE | `/supprimerPersonnelId` | Supprimer un personnel par ID | `{"id": 16}` |
 | PUT | `/modifierPersonnelId` | Modifier un personnel à partir de son ID |  `{"id": 15,"nom": "Dupont", "prenom" : "Amandine", "date_embauche" : "2024-01-01", "telephone": "0666666666", "email":"test@test.fr", "actif" : 0}` |
-```
+
+
+## 2. Route patient
+
+| Méthode | Route | Description | Body JSON |
+|---|---|---|---|
+| GET | `/patientId` | Récupère un patient par son ID |`{"id": 2}` |
+| POST | `/patients` | Ajout d'un patient | `"nom": "bernard","prenom": "franc","date_naissance": "1980-03-27", "sexe": "M","adresse": "14 allée des Platanes, Fleur","telephone": "0622556698","email": "bernard.franc@sfr.fr","numero_secu": "2 80 03 13 143 225","imc_initial": "27.4",fumeur": 0,"pa_tabac": 0, "consommation_alcool": "aucune","profession": "Comptable","niveau_activité": "modéré","date_creation_dpi": "2024-10-05","actif": 1` |
+| DELETE | `/patientsupprimer` | Supprimer un patient par ID | `{"id": 2}` |
+| PUT | `/patientModifier` | Modifier un patient à partir de son ID |  `` |
