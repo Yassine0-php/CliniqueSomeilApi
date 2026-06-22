@@ -75,16 +75,7 @@ router.post("/", (req, res) => {
     pa_tabac,consommation_alcool,profession, niveau_activite,date_creation_dpi,actif,
     //attribut table patient
 
-
-
     
-
-   patientModele.ajouterNouveauPatient(
-    nom,
-    prenom,
-    age,
-    mail,
-    telephone,
     (err, id) => {
         if (err) {
             return res.status(500).json({ message:"patient deja existant !!" });
@@ -95,7 +86,7 @@ router.post("/", (req, res) => {
             id: id
         });
     }
-));
+);
 });
 
 router.delete("/", (req, res) => {
