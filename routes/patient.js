@@ -61,6 +61,7 @@ router.post("/", (req, res) => {
    patientModele.ajouterNouveauPatient(
     nom,prenom,date_naissance,sexe,adresse,telephone,email,numero_secu,imc_initial,fumeur,
     pa_tabac,consommation_alcool,profession, niveau_activite,date_creation_dpi,actif,
+    //attribut table patient
 
 
     
