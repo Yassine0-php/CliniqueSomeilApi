@@ -64,7 +64,7 @@ router.get('/', (req,res) => {
 
 router.post("/", (req, res) => {
 
-    const { nom, prenom, age, mail, telephone } = req.body;
+   
 
     const { nom, prenom, date_naissance, sexe,adresse,telephone,email, numero_secu,imc_initial,fumeur,
             pa_tabac,consommation_alcool,profession,niveau_activite,date_creation_dpi,actif } = req.body;
