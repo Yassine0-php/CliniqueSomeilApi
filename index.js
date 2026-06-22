@@ -15,7 +15,8 @@ app.use('/patientId', patientRoute);
 app.use('/patients', patientRoute);
 app.use('/patientsupprimer', patientRoute);
 app.use('/patientModifier', patientRoute);
-app.use('/resultat-nuit-ajout', resultatNuitRoute);
+app.use('/resultat-nuit', resultatNuitRoute);
+
 
 
 const port = 3000;
