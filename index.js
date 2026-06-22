@@ -12,6 +12,8 @@ const rhRoute = require('./routes/rh.js');
 
 
 
+
+
 app.use('/login', userRoute);
 app.use('/patientId', patientRoute);
 app.use('/patients', patientRoute);
