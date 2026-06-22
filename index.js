@@ -19,15 +19,15 @@ app.use('/patientsupprimer', patientRoute);
 app.use('/patientModifier', patientRoute);
 
 app.use('/resultat-nuit-ajout', resultatNuitRoute);
+app.use('/resultat-nuit', resultatNuitRoute);
 
-app.use(appareilRoute);
+
 app.use('/trouverPersonnelParId', rhRoute);
 app.use('/ajouterNouveauPersonnel', rhRoute);
 app.use('/supprimerPersonnelId', rhRoute);
 app.use('/modifierPersonnelId', rhRoute);
 
-app.use('/resultat-nuit', resultatNuitRoute);
-
+app.use(appareilRoute);
 
 
 
