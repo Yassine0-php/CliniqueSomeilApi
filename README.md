@@ -83,33 +83,6 @@ PUT : Modifier des donées via UPDATE
 | Méthode | Route | Description | Body JSON |
 |---|---|---|---|
 | GET | `/resultat-nuit/details` | Récupère un résultat par son un ID nuit |`{"id_nuit": 1}` |
-| POST | `/resultat-nuit/ajout` | Ajout d'un résultat nuit | ` "nuit":"1",
-  "spo2_min":"88.70", 
-  "spo2_moy":"96.80",
-  "spo2_mediane":"97.00", 
-  "duree_sommeil_min":"450",
-  "new_duree_hypoxie":"5",
-  "position_dominante":"latérale",
-  "decibels_max":"59.80",
-  "decibels_moy":"100",
-  "new_nb_ronflements_forts":"0"` |
+| POST | `/resultat-nuit/ajout` | Ajout d'un résultat nuit | ` {"nuit":"1","spo2_min":"88.70","spo2_moy":"96.80","spo2_mediane":"97.00", "duree_sommeil_min":"450","new_duree_hypoxie":"5","position_dominante":"latérale","decibels_max":"59.80","decibels_moy":"100","new_nb_ronflements_forts":"0"}` |
 | DELETE | `/resultat-nuit/suppression` | Supprimer le résultat d'une nuit | `{"id_nuit": 1}` |
-| PUT | `/resultat-nuit/modification` | Modifier les résultats d'une nuit |  `{ "id_medecin_validateur": "2",
-  "date_validation":"2026-06-21",
-  "iah": 18.4,
-  "spo2_min": 84,
-  "spo2_moy": 93.2,
-  "spo2_mediane": 94,
-  "nb_apnees": 32,
-  "nb_hypopnees": 45,
-  "nb_rera": 10,
-  "nb_microeveils": 22,
-  "duree_sommeil_min": 50,
-  "duree_hypoxie_min": 35,
-  "position_dominante": "latérale",
-  "duree_apnee_moy_sec": 21.5,
-  "duree_apnee_max_sec": 48,
-  "decibels_max": 78.3,
-  "decibels_moy": 52.6,
-  "new_nb_ronflements_forts":0,
-  "nuit": "2"}` |
+| PUT | `/resultat-nuit/modification` | Modifier les résultats d'une nuit |  `{"id_medecin_validateur":"2","date_validation":"2026-06-21","iah": 18.4,"spo2_min": 84,"spo2_moy": 93.2,"spo2_mediane": 94,"nb_apnees": 32,"nb_hypopnees": 45,"nb_rera": 10,"nb_microeveils": 22,"duree_sommeil_min": 50,"duree_hypoxie_min": 35,"position_dominante": "latérale","duree_apnee_moy_sec":21.5,"duree_apnee_max_sec": 48,"decibels_max": 78.3,"decibels_moy": 52.6,"new_nb_ronflements_forts":0,"nuit": "2"}` |
