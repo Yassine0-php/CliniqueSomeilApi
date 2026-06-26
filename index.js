@@ -1,8 +1,15 @@
 const express = require("express");
+const cors = require('cors');
 
 const app = express();
+const cors = require('cors');
+
+app.use(cors({
+    origin: "http://localhost:4200"
+}));
 
 app.use(express.json());
+app.use(cors());
 
 const userRoute = require('./routes/utilisateurs.js');
 const patientRoute = require('./routes/patient.js');
@@ -30,7 +37,6 @@ app.use('/supprimerPersonnelId', rhRoute);
 app.use('/modifierPersonnelId', rhRoute);
 
 app.use(appareilRoute);
-
 
 
 const port = 3000;
