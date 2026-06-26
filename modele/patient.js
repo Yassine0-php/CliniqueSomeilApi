@@ -87,6 +87,7 @@ function modifierPatient(id_patient, nom, prenom, date_naissance, sexe,adresse,t
 
 module.exports = {
     findPatientById,
+    displayAllPatients,
     ajouterNouveauPatient,
     supprimerPatientId,
     modifierPatient

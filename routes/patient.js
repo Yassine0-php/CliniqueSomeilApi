@@ -3,7 +3,7 @@ const router = express.Router();
 const patientModele = require('../modele/patient.js')
 
 
-router.get('/', (req,res) => {
+router.get('/par_id', (req,res) => {
 
     const id  = Number(req.query.id);
     //console.log("id reçu : ", id)
