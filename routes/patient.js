@@ -58,7 +58,7 @@ router.get('/', (req,res) => {
 router.get('/', (req,res) => {
 
     //console.log("id reçu : ", id)
-    patientModele.displayAllPatients(id, (err, patient) => {
+    patientModele.displayAllPatients((err, patient) => {
          console.log("Erreur SQL :", err);
     console.log("Patient :", patient);
 
@@ -96,7 +96,7 @@ router.get('/', (req,res) => {
              });
         
         }else {
-             return res.status(404).json({"message":"Patient non trouvé"})
+             return res.status(404).json({"message":"Table patient non trouvé"})
         }
 
             
