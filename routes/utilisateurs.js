@@ -17,7 +17,13 @@ router.post('/', (req, res) => {
                 success: true,
                 message: "Connexion validée",
                 id_utilisateur: user.id_utilisateur,
-                role: user.role
+                role: user.role,
+                email:user.email,
+                actif:user.actif,
+                nom : user.nom,
+                prenom : user.prenom,
+                telephone :user.telephone,
+                date_embauche:user.date_embauche
             });
         }
 
