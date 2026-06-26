@@ -8,7 +8,7 @@ function displayAllPatients(callback) {
             if (err) {
                 return callback(err, null);
             }
-            return callback(null,  result[0]);
+            return callback(null,  result);
         }
     );
 }
