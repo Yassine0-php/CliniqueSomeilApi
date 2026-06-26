@@ -1,6 +1,19 @@
 
 const bdd = require("../config/connexionBdd");
 
+function displayAllPatients(callback) {
+    bdd.query(
+        `SELECT * FROM patient`,
+        (err, result) => {
+            if (err) {
+                return callback(err, null);
+            }
+            return callback(null,  result[0]);
+        }
+    );
+}
+
+
 function findPatientById(id_patient, callback) {
     bdd.query(
         `SELECT * FROM patient WHERE id_patient = ?`,
