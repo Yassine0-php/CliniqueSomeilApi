@@ -16,7 +16,7 @@ const patientRoute = require('./routes/patient.js');
 const resultatNuitRoute = require('./routes/resultatNuitRoutes.js');
 const appareilRoute = require('./routes/appareilRoutes.js');
 const rhRoute = require('./routes/rh.js');
-
+const nuitEtudeRoute = require('./routes/nuitEtude.js');
 
 
 
@@ -36,6 +36,8 @@ app.use('/trouverPersonnelParId', rhRoute);
 app.use('/ajouterNouveauPersonnel', rhRoute);
 app.use('/supprimerPersonnelId', rhRoute);
 app.use('/modifierPersonnelId', rhRoute);
+
+app.use('/nuitEtude', nuitEtudeRoute);
 
 app.use(appareilRoute);
 
