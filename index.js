@@ -18,6 +18,7 @@ const appareilRoute = require('./routes/appareilRoutes.js');
 const rhRoute = require('./routes/rh.js');
 const medecinRoute = require('./routes/medecinRoutes.js');
 
+const nuitEtudeRoute = require('./routes/nuitEtude.js');
 
 
 
@@ -37,6 +38,8 @@ app.use('/trouverPersonnelParId', rhRoute);
 app.use('/ajouterNouveauPersonnel', rhRoute);
 app.use('/supprimerPersonnelId', rhRoute);
 app.use('/modifierPersonnelId', rhRoute);
+
+app.use('/nuitEtude', nuitEtudeRoute);
 
 app.use(appareilRoute);
 app.use(medecinRoute);
