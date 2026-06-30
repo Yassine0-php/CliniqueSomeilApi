@@ -17,6 +17,9 @@ const resultatNuitRoute = require('./routes/resultatNuitRoutes.js');
 const appareilRoute = require('./routes/appareilRoutes.js');
 const rhRoute = require('./routes/rh.js');
 const lancerEtl = require('./routes/lancerEtl.js');
+const medecinRoute = require('./routes/medecinRoutes.js');
+
+const nuitEtudeRoute = require('./routes/nuitEtude.js');
 
 
 
@@ -39,6 +42,10 @@ app.use('/modifierPersonnelId', rhRoute);
 
 app.use(lancerEtl);
 
+app.use('/nuitEtude', nuitEtudeRoute);
+
+app.use(appareilRoute);
+app.use(medecinRoute);
 
 
 const port = 3000;
