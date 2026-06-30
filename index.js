@@ -16,7 +16,7 @@ const patientRoute = require('./routes/patient.js');
 const resultatNuitRoute = require('./routes/resultatNuitRoutes.js');
 const appareilRoute = require('./routes/appareilRoutes.js');
 const rhRoute = require('./routes/rh.js');
-
+const lancerEtl = require('./routes/lancerEtl.js');
 
 
 
@@ -37,7 +37,8 @@ app.use('/ajouterNouveauPersonnel', rhRoute);
 app.use('/supprimerPersonnelId', rhRoute);
 app.use('/modifierPersonnelId', rhRoute);
 
-app.use(appareilRoute);
+app.use(lancerEtl);
+
 
 
 const port = 3000;
