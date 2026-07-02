@@ -4,15 +4,15 @@ const { spawn } = require("child_process");
 require("dotenv").config();
 
 
-router.get('/lancer-etl-operateur', lancerScript);
+router.post('/lancer-etl-operateur', lancerScript);
 
 function lancerScript(req, res) {
 
     const pythonProcess = spawn('python', [
         process.env.PATH_ETL,
-        req.query.id_nuit,
-        req.query.id_medecin,
-        req.query.commentaire_medical
+        req.body.id_nuit,
+        req.body.id_medecin,
+        req.body.commentaire_medical
     ]);
 
     let output = "";
