@@ -21,6 +21,7 @@ const medecinRoute = require('./routes/medecinRoutes.js');
 
 const nuitEtudeRoute = require('./routes/nuitEtude.js');
 
+const lancerStreamlit = require('./routes/lancerStreamlit.js');
 
 
 
@@ -41,6 +42,8 @@ app.use('/supprimerPersonnelId', rhRoute);
 app.use('/modifierPersonnelId', rhRoute);
 
 app.use(lancerEtl);
+
+app.use(lancerStreamlit);
 
 app.use('/nuitEtude', nuitEtudeRoute);
 
