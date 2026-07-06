@@ -7,7 +7,7 @@ function findUserByMailAndPassword(email, mdp, callback) {
     bdd.query(
         `SELECT u.id_utilisateur, p.email,p.actif,p.nom,p.prenom,p.telephone,p.date_embauche,u.mdp, u.role 
          FROM utilisateur u
-         inner join personnel p on p.id_personnel=u.id_utilisateur
+         inner join personnel p on p.id_personnel=u.id_personnel
          WHERE p.email =? AND u.mdp =?`,
         [email, mdp],
         (err, rows) => {
